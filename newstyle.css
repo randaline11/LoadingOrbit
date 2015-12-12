@@ -1,0 +1,91 @@
+html, body {max-height: 100%;}
+
+/* setup stuff */
+body {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-size: 1em;
+}
+
+.centered, .planet {
+  /* set positioning to center of screen... taken from stackoverflow.com */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* animation to rotate elements */
+@-webkit-keyframes orbit {100% {transform: rotate(360deg);}}
+@-moz-keyframes orbit {100% {transform: rotate(360deg);}}
+@-o-keyframes orbit {100% {transform: rotate(360deg);}}
+@keyframes orbit {100% {transform: rotate(360deg);}}
+
+/* center circle */
+#center {
+  max-width: 5vw;
+  max-height: 5vw;
+}
+
+/* the container elements for orbits/planets. centered quares. */
+#first {
+  max-width: 8vw;
+  max-height: 8vw;
+  /* name, duration, timing function, delay, iteration count, direction */
+  -webkit-animation: orbit 1.5s linear infinite;
+  -moz-animation: orbit 1.5s linear infinite;
+  -o-animation: orbit 1.5s linear infinite;
+  animation: orbit 1.5s linear infinite;
+}
+
+#second {
+  max-width: 12vw;
+  max-height: 12vw;
+
+  -webkit-animation: orbit 1.5s linear infinite reverse;
+  -moz-animation: orbit 1.5s linear infinite reverse;
+  -o-animation: orbit 1.5s linear infinite reverse;
+  animation: orbit 1.5s linear infinite reverse;
+}
+
+#third {
+  max-width: 16vw;
+  max-height: 16vw;
+
+  -webkit-animation: orbit 1.5s linear infinite;
+  -moz-animation: orbit 1.5s linear infinite;
+  -o-animation: orbit 1.5s linear infinite;
+  animation: orbit 1.5s linear infinite;
+}
+
+ #circle {
+   width: 100%;
+   height: 100%;
+   z-index: 1
+ }
+
+ .orbits {
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+ }
+
+ .movingplan {
+   width:15%;
+   height: 15%;
+   /* position the planets on orbits to be able to move */
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   z-index: 2;
+ }
+
+  #planet1 {right: -10%;}
+  #planet2 {right: -10%;}
+  #planet3 {left:-8%; }
